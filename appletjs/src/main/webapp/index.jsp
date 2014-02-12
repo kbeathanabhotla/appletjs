@@ -1,8 +1,15 @@
 <html>
 
 <script language="Javascript">
-	function callHello(name) {
-		alert("hello " + name);
+	function getANumber() {
+		var number = prompt("Please enter your name","0");
+		return number;
+	}
+	function displayNumber(text) {
+		document.getElementById('displayArea').append('<br />'+text);
+	}
+	function displayError(message) {
+		alert(message);
 	}
 </script>
 
@@ -12,11 +19,8 @@
 <body>
 
 	<h1>Applet acess Javascript method</h1>
-	<!-- <applet width=300 height=100 MAYSCRIPT
-		code="WEB-INF/classes/com/mkyong/applet/JavaToJavaScript.class"
-		codebase="/appletjs/WEB-INF/classes"> </applet>
-	 -->
-	<APPLET code="com.mkyong.applet.JavaToJavaScript.class" 
+	
+	<APPLET code="com.saikrishna.appletjs.Calculator.class" 
         archive="applets.jar"
         width=250 height=250>
 	</APPLET>
