@@ -7,17 +7,13 @@
         var numB = prompt('Enter number \'b\' (should be greater than number \'a\') :','2');
 		// set applet's public variable
         mathApplet.userName = "John Doe";
-		console.log(mathApplet);
-		console.log(mathApplet.userName);
-        // invoke public applet method
 		
-        var calculator = document.mathApplet.getCalculator();
-        calculator.setNums(numA, numB);
-
-        
-        var greeting = mathApplet.getGreeting();
+		// invoke public applet method
+		var greeting = mathApplet.getGreeting();
 
         // get another class referenced by applet and invoke its methods
+		var calculator = document.mathApplet.getCalculator();
+        calculator.setNums(numA, numB);
 
         // primitive datatype returned by applet
         var sum = calculator.add();
