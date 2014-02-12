@@ -1,29 +1,23 @@
 <html>
 
 <script language="Javascript">
-	/* function getANumber() {
-		var number = prompt("Please enter your name","0");
-		return number;
-	}
-	function displayNumber(text) {
-		document.getElementById('displayArea').append('<br />'+text);
-	}
-	function displayError(message) {
-		alert(message);
-	}
-	 */
+	
 	function enterNums(){
 		var numA = prompt('Enter number \'a\' greater than or equal to zero:','0');
         var numB = prompt('Enter number \'b\' (should be greater than number \'a\') :','2');
 		// set applet's public variable
         mathApplet.userName = "John Doe";
-
+		console.log(mathApplet);
+		console.log(mathApplet.userName);
         // invoke public applet method
+		
+        var calculator = document.mathApplet.getCalculator();
+        calculator.setNums(numA, numB);
+
+        
         var greeting = mathApplet.getGreeting();
 
         // get another class referenced by applet and invoke its methods
-        var calculator = mathApplet.getCalculator();
-        calculator.setNums(numA, numB);
 
         // primitive datatype returned by applet
         var sum = calculator.add();
@@ -71,19 +65,11 @@
 
 	<h1>Applet acess Javascript method</h1>
 	
-	<!-- <APPLET code="com.saikrishna.appletjs.Calculator.class" 
+	<APPLET id="mathApplet" code="jstojava.MathApplet" 
         archive="applets.jar"
         width=250 height=250>
-	</APPLET> -->
-	
-	<script src="https://www.java.com/js/deployJava.js"></script>
-    <script>
-        <!-- applet id can be used to get a reference to the applet object -->
-        var attributes = { id:'mathApplet', code:'jstojava.MathApplet', width:1, height:1} ;
-        var parameters = {jnlp_href: 'math_applet.jnlp'} ;
-        deployJava.runApplet(attributes, parameters, '1.6');
-    </script>
-	
+	</APPLET>
+		
 	 <p><a href="javascript:enterNums();">Launch Calculator</a></p>
 </body>
 </html>
